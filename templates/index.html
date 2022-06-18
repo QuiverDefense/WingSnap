@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" href="/static/favicon.ico"><!-- solves favicon.ico issue-->
+    <title>Lepidoptera Model</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+
+<body>
+    <h1 class="text-center">Lepidopteran Classifier</h1>
+    <style>
+    body {
+        background-image: url('/static/sitewallpaper.png');
+        background-size: contain;
+        height: 180vh;
+        background-color: #CB6CE6;
+      }
+
+      </style>
+
+    <form class="p-3 text-center" action = '/', method="post" enctype="multipart/form-data" style=" width: 50vw; margin-left : 25vw;">
+        <input class="form-control" type="file" name="imagefile">
+        <input class="btn btn-primary mt-3" type="submit" value="Classify!">
+    </form>
+
+    {% if prediction %}
+        <p class="text-center">Image is: {{prediction}}</p>
+    {% endif %}
+</body>
+</html>
